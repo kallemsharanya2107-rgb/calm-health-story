@@ -1,13 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { AppLayout } from "@/components/layout/AppLayout";
+import { WelcomeHeader } from "@/components/dashboard/WelcomeHeader";
+import { QuickActions } from "@/components/dashboard/QuickActions";
+import { QuickStats } from "@/components/dashboard/QuickStats";
+import { MedicationReminders } from "@/components/dashboard/MedicationReminders";
+import { RecentActivity } from "@/components/dashboard/RecentActivity";
+import { WellnessInsight } from "@/components/dashboard/WellnessInsight";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <AppLayout>
+      <WelcomeHeader />
+      <QuickActions />
+      <QuickStats />
+      
+      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        <MedicationReminders />
+        <div className="space-y-6">
+          <RecentActivity />
+          <WellnessInsight />
+        </div>
       </div>
-    </div>
+    </AppLayout>
   );
 };
 
